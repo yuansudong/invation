@@ -2,10 +2,7 @@ package invation
 
 // _Base 用于存储进制转换函数
 var (
-	_Base []byte = []byte{
-		'A', 'B', 'C', '6', 'D', 'E', 'F', '2', 'G', 'H', 'J', '3', 'K', 'L', 'M', '4', 'N', 'P', '5', 'Q', 'R', 'S', '7', 'T', '8', 'U', 'V', 'W', '9', 'X', 'Y', 'Z',
-		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-	}
+	_Base []byte
 	// _BaseMap 用于根据值获取索引,以此来提高索引的效率
 	_BaseMap map[byte]int
 
@@ -22,6 +19,10 @@ const (
 
 // Init 对其进行初始化
 func Init() {
+	_Base = []byte{
+		'A', 'B', 'C', '6', 'D', 'E', 'F', '2', 'G', 'H', 'J', '3', 'K', 'L', 'M', '4', 'N', 'P', '5', 'Q', 'R', 'S', '7', 'T', '8', 'U', 'V', 'W', '9', 'X', 'Y', 'Z',
+		'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'k', 'm', 'n', 'p', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+	}
 	_BaseMap = make(map[byte]int)
 	for index := 0; index < len(_Base); index++ {
 		_BaseMap[_Base[index]] = index
